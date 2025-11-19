@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% block content %}
+<form method="POST">
+  <input name="title" value="{{ task[1] }}"><br>
+  <textarea name="description">{{ task[2] }}</textarea><br>
+  <label>
+    <input type="checkbox" name="completed" {% if task[3] %}checked{% endif %}> Erledigt
+  </label>
+  <br>
+  <button type="submit">Speichern</button>
+</form>
+{% endblock %}
