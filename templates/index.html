@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block content %}
+<a href="/create">Neue Aufgabe</a>
+<ul>
+  {% for t in tasks %}
+    <li>
+      <b>{{ t[1] }}</b> - {{ t[2] }}
+      {% if t[3] %}(✓){% endif %}
+      <a href="/edit/{{ t[0] }}">Bearbeiten</a>
+      <a href="/delete/{{ t[0] }}">Löschen</a>
+    </li>
+  {% endfor %}
+</ul>
+{% endblock %}
